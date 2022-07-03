@@ -13,12 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmet.HistoryApp.R
 import com.ahmet.HistoryApp.adaptor.Favori_Adaptor
-import com.ahmet.HistoryApp.viewmodel.HomeViewModel
+import com.ahmet.HistoryApp.viewmodel.LikeViewModel
 import com.ahmet.HistoryApp.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_favori.*
 
 class FavoriFragment : Fragment() {
-    private val homeViewModel:HomeViewModel by activityViewModels()
+    private val homeViewModel:LikeViewModel by activityViewModels()
     private var favori_adaptor:Favori_Adaptor?= null
 
     private lateinit var userViewModel: UserViewModel

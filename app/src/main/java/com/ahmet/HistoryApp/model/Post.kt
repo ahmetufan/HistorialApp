@@ -5,6 +5,30 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+data class KategoriModel(
+    val history_kategori: List<Kategori>
+)
+data class Kategori(
+    val id: String,
+    val name: String
+)
+
+data class DetailModel(
+    val history: List<Detail>
+)
+data class Detail(
+    val date: String,
+    val details: String,
+    val id: String,
+    val image: String,
+    val kategori_id: String,
+    val loaction: String,
+    val name: String
+)
+
+
+
+
 @Parcelize
 data class Post(
     val name: String,

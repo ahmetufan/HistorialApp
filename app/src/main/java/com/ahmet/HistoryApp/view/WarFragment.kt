@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmet.HistoryApp.R
 import com.ahmet.HistoryApp.adaptor.War_Adaptor
 import com.ahmet.HistoryApp.model.War
-import com.ahmet.HistoryApp.viewmodel.HomeViewModel
+import com.ahmet.HistoryApp.viewmodel.LikeViewModel
 import kotlinx.android.synthetic.main.fragment_war.*
 
 class WarFragment : Fragment() {
     private val models=ArrayList<War>()
     private lateinit var adaptery:War_Adaptor
-    private val homeViewModel: HomeViewModel by activityViewModels()
+    private val homeViewModel: LikeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

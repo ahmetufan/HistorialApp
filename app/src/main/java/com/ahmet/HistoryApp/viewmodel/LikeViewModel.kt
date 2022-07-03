@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ahmet.HistoryApp.model.Post
 
-class HomeViewModel:ViewModel() {
+class LikeViewModel:ViewModel() {
 
     val basket = MutableLiveData<List<Post>>()
 
