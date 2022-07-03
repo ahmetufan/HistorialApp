@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageWar"
+            android:layout_width="393dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/einstein"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/textwarKonum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/ic_konum"
+            android:text="İstanbul, Türkiye"
+            android:textColor="@color/textrenk"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/texwarName"
+            app:layout_constraintTop_toBottomOf="@+id/texwarName" />
+
+        <TextView
+            android:id="@+id/texwarName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_warnamee"
+            android:text="Mohaç Meydan Muharebesi"
+            android:textColor="@color/textrenk"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageWar"
+            app:layout_constraintTop_toBottomOf="@+id/imageWar" />
+
+        <TextView
+            android:id="@+id/textwarTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp"
+            android:drawableLeft="@drawable/ic_time"
+            android:text="1918 - 1921"
+            android:textColor="@color/textrenk"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textwarKonum"
+            app:layout_constraintTop_toBottomOf="@+id/textwarKonum" />
+
+        <Button
+            android:id="@+id/btnWarDetay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/round_button"
+            android:text="detay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <CheckBox
+            android:id="@+id/war_checkbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="16dp"
+            android:button="@drawable/favori_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:useMaterialThemeColors="false" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

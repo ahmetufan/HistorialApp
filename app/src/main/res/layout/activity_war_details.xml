@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".view.WarDetailsActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@color/white"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/war_image_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cengizhansavas"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="290dp"
+                    android:background="@drawable/ic_wavewar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></View>
+
+                <CheckBox
+                    android:id="@+id/like_checkbox_war"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="15dp"
+                    app:useMaterialThemeColors= "false"
+                    android:button="@drawable/favori_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_back_war"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/war_details_text_baslik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Moğolistan Çin Savaşı "
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/war_details_text_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1201-1210"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold"></TextView>
+
+
+
+            <TextView
+                android:id="@+id/war_details_text_detay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Cengiz Han[not 1] (doğum adıyla Temuçin,[not 2] y. 1162 – 18 Ağustos 1227), Moğol İmparatorluğu'nun kurucusu ve ilk Kağanı olan Moğol komutan ve hükümdardır.[3] Hükümdarlığı döneminde gerçekleştirdiği hiçbir savaşı kaybetmeyen Cengiz Han, Dünya tarihinin en büyük askeri liderlerinden birisi olarak kabul edilmektedir. 13. yüzyılın başında Orta Asya'daki tüm göçebe bozkır kavimlerini birleştirip bir ulus hâline getirerek Moğol siyasi kimliği çatısı altında toplamış ve dünyanın en büyük bitişik sınırlara sahip imparatorluğunu kurmuştur.
+
+1162 civarında Moğolistan'daki Onon Nehri yakınlarında doğduğu düşünülen Cengiz Han'ın gerçek adı ''Temuçin''dir. Babası Yesügey, düşman bir kabile olan Tatarlar tarafından zehirlenerek öldürüldüğünde Temuçin henüz 9 yaşındaydı.[4] Temuçin'in kabilesi, küçük yaştaki bir çocuğun liderliğini kabul etmedi ve kardeşleri ve annesiyle birlikte onları ölüme terk ederek kabileden sürdüler. Moğolistan'ın acımasız bozkırlarında kaçarak ve saklanarak hayatta kalmaya çalıştılar. Temuçin daha küçücük bir çocukken, avladıkları bir hayvanı paylaşmak istemeyen üvey kardeşini çıkan bir kavga sonucu öldürdü. 16 yaşına geldiğinde, daha önceden yaptıkları bir anlaşma sayesinde nüfuzlu bir kabileden olan Börte isminde birisiyle evlendi. Henüz 20 yaşına geldiğinde, tüm Moğolistan'da tanınan ve saygı duyulan bir komutan haline gelmeyi başarmıştı. Moğolistan'daki göçebe kavimleri birer birer kendi bayrağı altında birleştirdi. 1206 yılına gelindiğinde Moğolistan'da birlik sağlanmıştı."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/war_details_text_detay2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

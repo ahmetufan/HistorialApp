@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:cnb_iconColor="@color/home"></item>
+
+    <item
+        android:id="@+id/warFragment"
+        android:icon="@drawable/ic_war"
+        android:title="War"
+        app:cnb_iconColor="#FFB300"></item>
+
+    <item
+        android:id="@+id/favoriFragment"
+        android:icon="@drawable/ic_favori"
+        android:title="Favori"
+        app:cnb_iconColor="#FF0000"></item>
+    <item
+        android:id="@+id/profilFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="Profil"
+        app:cnb_iconColor="@color/profile"></item>
+
+</menu>

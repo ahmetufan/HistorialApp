@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Ahmet/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/drawable/ic_kalp.xml" value="0.2125" />
+        <entry key="..\:/Users/Ahmet/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/layout/activity_main.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/Ahmet/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/menu/menu.xml" value="0.19635416666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/add.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/collapsing_border.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/collapsing_border_bg.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/favori_btn.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_delete.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_email.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_favori2.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_favorite.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_lock.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_logout.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_name.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_person.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_profil2.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_profile.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_search.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_search2.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_wave.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_wave2.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_wavedetails.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/ic_wavewar.xml" value="0.188" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/like_border.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/round_borde.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/round_border.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/drawable/round_button.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_favori_details.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_home_details.xml" value="0.11270491803278689" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_login.xml" value="0.17" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_register.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_update.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/activity_war_details.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/details_row.xml" value="0.12894736842105264" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/favori_row.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/favori_row2.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/favori_row3.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_add.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_blank.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_favori.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_profil.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_update.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/fragment_war.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/home_bilim_row.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/home_bilim_row_dikey.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/user_item.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/layout/war_row.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/menu-v26/menu_delete.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/HistoryApp/app/src/main/res/menu/menu_delete.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.171" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/drawable/ic_launcher_background.xml" value="0.171" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/drawable/ic_profile.xml" value="0.183" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/layout/activity_main.xml" value="0.1911231884057971" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/KotlinChipNavigationBar/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

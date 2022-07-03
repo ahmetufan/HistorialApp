@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "568738223444",
+    "project_id": "historyapp-f81a0",
+    "storage_bucket": "historyapp-f81a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568738223444:android:41b06a6e86eb46f01ce4c1",
+        "android_client_info": {
+          "package_name": "com.ahmet.HistoryApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568738223444-4r8158pf6f37u14v56s8ldr0dv6h2bha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_j-8KvyZherMWR0unStmxdTsYG7FSi7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568738223444-4r8158pf6f37u14v56s8ldr0dv6h2bha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

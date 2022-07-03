@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/amaranth</item>
+        <item>@font/amita</item>
+        <item>@font/arbutus_slab</item>
+        <item>@font/artifika</item>
+        <item>@font/bevan</item>
+    </array>
+</resources>

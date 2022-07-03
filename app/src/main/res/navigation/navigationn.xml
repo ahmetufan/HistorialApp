@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationn"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ahmet.HistoryApp.ap.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_homeDetailsActivity"
+            app:destination="@id/homeDetailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/warFragment"
+        android:name="com.ahmet.HistoryApp.view.WarFragment"
+        android:label="fragment_war"
+        tools:layout="@layout/fragment_war" >
+        <action
+            android:id="@+id/action_warFragment_to_warDetailsActivity"
+            app:destination="@id/warDetailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriFragment"
+        android:name="com.ahmet.HistoryApp.view.FavoriFragment"
+        android:label="fragment_favori"
+        tools:layout="@layout/fragment_favori" >
+        <action
+            android:id="@+id/action_favoriFragment_to_favoriDetailsActivity"
+            app:destination="@id/favoriDetailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.ahmet.HistoryApp.view.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/action_profilFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_profilFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_profilFragment_to_updateActivity2"
+            app:destination="@id/updateActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.ahmet.HistoryApp.view.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.ahmet.HistoryApp.view.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+    <activity
+        android:id="@+id/homeDetailsActivity"
+        android:name="com.ahmet.HistoryApp.view.HomeDetailsActivity"
+        android:label="activity_home_details"
+        tools:layout="@layout/activity_home_details" >
+        <argument
+            android:name="user"
+            app:argType="com.ahmet.HistoryApp.model.Post" />
+    </activity>
+    <activity
+        android:id="@+id/warDetailsActivity"
+        android:name="com.ahmet.HistoryApp.view.WarDetailsActivity"
+        android:label="activity_war_details"
+        tools:layout="@layout/activity_war_details" >
+        <argument
+            android:name="warUser"
+            app:argType="com.ahmet.HistoryApp.model.War" />
+    </activity>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.ahmet.HistoryApp.view.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_profilFragment"
+            app:destination="@id/profilFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/updateActivity"
+        android:name="com.ahmet.HistoryApp.view.UpdateActivity"
+        android:label="activity_update"
+        tools:layout="@layout/activity_update" >
+        <argument
+            android:name="currentUserr"
+            app:argType="com.ahmet.HistoryApp.model.User" />
+    </activity>
+    <activity
+        android:id="@+id/favoriDetailsActivity"
+        android:name="com.ahmet.HistoryApp.view.FavoriDetailsActivity"
+        android:label="activity_favori_details"
+        tools:layout="@layout/activity_favori_details" >
+        <argument
+            android:name="post1"
+            app:argType="com.ahmet.HistoryApp.model.Post" />
+    </activity>
+</navigation>
