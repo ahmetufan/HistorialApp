@@ -10,29 +10,31 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmet.HistoryApp.R
-import com.ahmet.HistoryApp.adaptor.Home_Adaptor
-import com.ahmet.HistoryApp.adaptor.Home_Bilim_Adaptor
-import com.ahmet.HistoryApp.adaptor.Home_Bilim_Adaptor2
+import com.ahmet.HistoryApp.adaptor.*
 import com.ahmet.HistoryApp.model.Post
 import com.ahmet.HistoryApp.service.Listener
-import com.ahmet.HistoryApp.viewmodel.HomeViewModel
-import com.ahmet.HistoryApp.viewmodel.LikeViewModel
+import com.ahmet.HistoryApp.viewmodel.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() ,Listener{
-    private val homeViewModel:LikeViewModel by activityViewModels()
+class HomeFragment : Fragment(), Listener {
+    private val homeViewModel: LikeViewModel by activityViewModels()
 
-    private lateinit var adaptery:Home_Bilim_Adaptor
-    private lateinit var adaptery2:Home_Bilim_Adaptor2
-    private lateinit var model:ArrayList<Post>
 
-    private lateinit var viewModel:HomeViewModel
-    private lateinit var adapter:Home_Adaptor
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var adapterbilim: Home_Adaptor
+
+    private lateinit var filozofViewModel: FilozofViewModel
+    private lateinit var adapterfilozof: Adaptor_Filozof
+
+    private lateinit var liderViewModel: LiderViewModel
+    private lateinit var adapterLider: Adaptor_Lider
+
+    private lateinit var onemliViewModel:OnemliViewModel
+    private lateinit var adapterOnemli:Adaptor_Onemli
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        model=ArrayList<Post>()
     }
 
     override fun onCreateView(
@@ -46,56 +48,88 @@ class HomeFragment : Fragment() ,Listener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel=ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         viewModel.refreshData()
 
-        recycler_bilim.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        adapter= Home_Adaptor(arrayListOf())
-        recycler_bilim.adapter=adapter
+        recycler_bilim.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        adapterbilim = Home_Adaptor(arrayListOf())
+        recycler_bilim.adapter = adapterbilim
 
         observeLiveData()
 
+        filozofViewModel = ViewModelProvider(this).get(FilozofViewModel::class.java)
 
+        filozofViewModel.refreshData()
 
+        recycler_lider.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        adapterfilozof = Adaptor_Filozof(arrayListOf())
+        recycler_lider.adapter = adapterfilozof
 
-        recycler_lider.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        adaptery= Home_Bilim_Adaptor(model,this)
-        recycler_lider.adapter=adaptery
+        observeFilozofData()
 
-        recycler_filozof.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
-        adaptery2= Home_Bilim_Adaptor2(model,this)
-        recycler_filozof.adapter=adaptery2
+        liderViewModel = ViewModelProvider(this).get(LiderViewModel::class.java)
 
-        recycler_aktivist.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        recycler_aktivist.adapter=adaptery
+        liderViewModel.refreshData()
 
-        val model2=Post("Fatih Sultan Mehmet","OSMANLI DEVLETİ","1449-1467",R.drawable.fsm,"Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet ")
-        model.add(model2)
+        recycler_filozof.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        adapterLider = Adaptor_Lider(arrayListOf())
+        recycler_filozof.adapter = adapterLider
 
-        val model3=Post("Madam Curie","ABD","1449-1467",R.drawable.madam,"Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet ")
-        model.add(model3)
+        observeLiderData()
 
-        val model4=Post("Sokrates","YUNANİSTAN","1449-1467",R.drawable.sokrates,"Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet ")
-        model.add(model4)
+        onemliViewModel=ViewModelProvider(this).get(OnemliViewModel::class.java)
 
-        val model5=Post("Einstein","ABD","1449-1467",R.drawable.einstein,"Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet ")
-        model.add(model5)
+        onemliViewModel.refreshData()
 
-        val model6=Post("Cengiz Han","MOĞOLİSTAN","1449-1467",R.drawable.cengizhan,"Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet Fatih Sultan Mehmet ")
-        model.add(model6)
+        recycler_aktivist.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        adapterOnemli= Adaptor_Onemli(arrayListOf())
+        recycler_aktivist.adapter=adapterOnemli
 
-
-
+        observeOnemliData()
 
 
     }
+
     fun observeLiveData() {
 
-        viewModel.home.observe(viewLifecycleOwner, Observer { home ->
+        viewModel.bilim.observe(viewLifecycleOwner, Observer { bilim ->
 
-            home?.let {
-                adapter.updateGramer(home.history_kategori)
+            bilim?.let {
+                adapterbilim.updateBilim(bilim)
+            }
+        })
+    }
+
+    fun observeFilozofData() {
+
+        filozofViewModel.filozof.observe(viewLifecycleOwner, Observer { filozof ->
+
+            filozof?.let {
+                adapterfilozof.updateFilozof(filozof)
+            }
+        })
+    }
+
+    fun observeLiderData() {
+
+        liderViewModel.lider.observe(viewLifecycleOwner, Observer { lider ->
+
+            lider?.let {
+                adapterLider.updateLider(lider)
+            }
+        })
+    }
+
+    fun observeOnemliData() {
+
+        onemliViewModel.onemli.observe(viewLifecycleOwner, Observer { onemli ->
+
+            onemli?.let {
+                adapterOnemli.updateOnemli(onemli)
             }
         })
     }

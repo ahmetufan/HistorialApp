@@ -5,30 +5,46 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
-data class KategoriModel(
-    val history_kategori: List<Kategori>
-)
-data class Kategori(
-    val id: String,
-    val name: String
-)
-
-data class DetailModel(
-    val history: List<Detail>
-)
-data class Detail(
+data class Bilim(
     val date: String,
     val details: String,
     val id: String,
     val image: String,
-    val kategori_id: String,
-    val loaction: String,
+    val location: String,
     val name: String
 )
-
-
-
-
+data class Filozof(
+    val date: String,
+    val details: String,
+    val id: String,
+    val image: String,
+    val location: String,
+    val name: String
+)
+data class Lider(
+    val date: String,
+    val details: String,
+    val id: String,
+    val image: String,
+    val location: String,
+    val name: String
+)
+data class Onemli(
+    val date: String,
+    val details: String,
+    val id: String,
+    val image: String,
+    val location: String,
+    val name: String
+)
+data class Savas(
+    val date: String,
+    val details: String,
+    val id: String,
+    val image: String,
+    val location: String,
+    val name: String
+)
 @Parcelize
 data class Post(
     val name: String,
@@ -37,9 +53,10 @@ data class Post(
     val image: Int,
     val history: String,
 ) : Parcelable {
-    var count=0
+    var count = 0
 }
-        // name - image - date - location - details
+
+// name - image - date - location - details
 @Parcelize
 data class War(
     val image: Int,
@@ -48,7 +65,7 @@ data class War(
     val konum: String,
     val detay: String
 ) : Parcelable {
-    var count=0
+    var count = 0
 }
 
 
@@ -62,4 +79,4 @@ data class User(
 ) : Parcelable
 
 //Firebase Model
-data class UserModel(val uid: String="", val username: String="", val imageUrl: String="")
+data class UserModel(val uid: String = "", val username: String = "", val imageUrl: String = "")

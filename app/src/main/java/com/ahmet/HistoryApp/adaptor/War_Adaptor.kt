@@ -6,11 +6,13 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmet.HistoryApp.R
-import com.ahmet.HistoryApp.model.War
+import com.ahmet.HistoryApp.model.Filozof
+import com.ahmet.HistoryApp.model.Savas
 import com.ahmet.HistoryApp.view.WarFragmentDirections
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.war_row.view.*
 
-class War_Adaptor(private val modelList: ArrayList<War>) :
+class War_Adaptor(private val modelList: ArrayList<Savas>) :
     RecyclerView.Adapter<War_Adaptor.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): War_Adaptor.Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.war_row, parent, false)
@@ -19,18 +21,13 @@ class War_Adaptor(private val modelList: ArrayList<War>) :
 
     override fun onBindViewHolder(holder: War_Adaptor.Holder, position: Int) {
 
-        holder.itemView.textwarKonum.text = modelList[position].konum
-        holder.itemView.textwarTime.text = modelList[position].time
         holder.itemView.texwarName.text = modelList[position].name
-        holder.itemView.imageWar.setImageResource(modelList[position].image)
+        holder.itemView.textwarKonum.text=modelList[position].location
+        holder.itemView.textwarTime.text = modelList[position].date
+
+        Glide.with(holder.itemView.context).load(modelList[position].image).into(holder.itemView.imageWar)
 
 
-        holder.itemView.btnWarDetay.setOnClickListener {
-
-            val action =
-                WarFragmentDirections.actionWarFragmentToWarDetailsActivity(modelList[position])
-            Navigation.findNavController(it).navigate(action)
-        }
     }
 
     override fun getItemCount(): Int {
@@ -39,5 +36,10 @@ class War_Adaptor(private val modelList: ArrayList<War>) :
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    }
+    fun updateSavas(updatesavass:List<Savas>) {
+        modelList.clear()
+        modelList.addAll(updatesavass)
+        notifyDataSetChanged()
     }
 }

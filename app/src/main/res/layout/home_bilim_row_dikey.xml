@@ -38,21 +38,9 @@
             android:text="Adı Soyadı"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="#045287"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Yaşadığı Tarih"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/text22" />
 
         <TextView
             android:id="@+id/text22"

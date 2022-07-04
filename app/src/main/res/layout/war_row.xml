@@ -17,7 +17,6 @@
             android:layout_width="393dp"
             android:layout_height="150dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/einstein"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +24,7 @@
 
         <TextView
             android:id="@+id/textwarKonum"
-            android:layout_width="wrap_content"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:drawableLeft="@drawable/ic_konum"
@@ -37,7 +36,7 @@
 
         <TextView
             android:id="@+id/texwarName"
-            android:layout_width="wrap_content"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:layout_marginTop="10dp"
@@ -60,14 +59,15 @@
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textwarKonum"
-            app:layout_constraintTop_toBottomOf="@+id/textwarKonum" />
+            app:layout_constraintTop_toBottomOf="@+id/textwarKonum"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/btnWarDetay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/round_button"
             android:text="detay"
             app:layout_constraintBottom_toBottomOf="parent"
