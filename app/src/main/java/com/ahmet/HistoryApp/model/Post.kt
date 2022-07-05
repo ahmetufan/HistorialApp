@@ -1,50 +1,11 @@
 package com.ahmet.HistoryApp.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
-data class Bilim(
-    val date: String,
-    val details: String,
-    val id: String,
-    val image: String,
-    val location: String,
-    val name: String
-)
-data class Filozof(
-    val date: String,
-    val details: String,
-    val id: String,
-    val image: String,
-    val location: String,
-    val name: String
-)
-data class Lider(
-    val date: String,
-    val details: String,
-    val id: String,
-    val image: String,
-    val location: String,
-    val name: String
-)
-data class Onemli(
-    val date: String,
-    val details: String,
-    val id: String,
-    val image: String,
-    val location: String,
-    val name: String
-)
-data class Savas(
-    val date: String,
-    val details: String,
-    val id: String,
-    val image: String,
-    val location: String,
-    val name: String
-)
 @Parcelize
 data class Post(
     val name: String,

@@ -63,8 +63,12 @@
         android:label="activity_home_details"
         tools:layout="@layout/activity_home_details" >
         <argument
-            android:name="user"
-            app:argType="com.ahmet.HistoryApp.model.Post" />
+            android:name="uID"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="giden"
+            app:argType="string" />
     </activity>
     <activity
         android:id="@+id/warDetailsActivity"
@@ -72,8 +76,9 @@
         android:label="activity_war_details"
         tools:layout="@layout/activity_war_details" >
         <argument
-            android:name="warUser"
-            app:argType="com.ahmet.HistoryApp.model.War" />
+            android:name="uId"
+            app:argType="integer"
+            android:defaultValue="0" />
     </activity>
     <fragment
         android:id="@+id/addFragment"

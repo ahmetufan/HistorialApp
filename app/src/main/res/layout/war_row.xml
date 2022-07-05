@@ -24,7 +24,7 @@
 
         <TextView
             android:id="@+id/textwarKonum"
-            android:layout_width="340dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:drawableLeft="@drawable/ic_konum"
@@ -61,17 +61,6 @@
             app:layout_constraintStart_toStartOf="@+id/textwarKonum"
             app:layout_constraintTop_toBottomOf="@+id/textwarKonum"
             app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/btnWarDetay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/round_button"
-            android:text="detay"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <CheckBox
             android:id="@+id/war_checkbox"

@@ -8,7 +8,6 @@ import com.ahmet.HistoryApp.R
 import kotlinx.android.synthetic.main.activity_war_details.*
 
 class WarDetailsActivity : AppCompatActivity() {
-    private val args by navArgs<WarDetailsActivityArgs>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +31,7 @@ class WarDetailsActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        //War Details
-        war_image_details.setImageResource(args.warUser.image)
-        war_details_text_baslik.text=args.warUser.name
-        war_details_text_time.text=args.warUser.time
-        war_details_text_detay.text=args.warUser.detay
+
 
 
 

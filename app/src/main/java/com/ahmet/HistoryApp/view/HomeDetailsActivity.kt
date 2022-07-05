@@ -1,15 +1,21 @@
 package com.ahmet.HistoryApp.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.navArgs
 import com.ahmet.HistoryApp.R
-import com.ahmet.HistoryApp.ap.view.HomeFragment
+import com.ahmet.HistoryApp.viewmodel.HomeDetailsViewModel
+import com.ahmet.HistoryApp.viewmodel.HomeDetailsViewModel2
+import com.ahmet.HistoryApp.viewmodel.HomeDetailsViewModel3
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_home_details.*
 
 class HomeDetailsActivity : AppCompatActivity() {
+    private lateinit var bilimdetailsViewModel: HomeDetailsViewModel
+    private lateinit var filozofetailsViewModel: HomeDetailsViewModel2
+    private lateinit var liderdailsViewModel: HomeDetailsViewModel3
 
     private val args by navArgs<HomeDetailsActivityArgs>()
 
@@ -18,35 +24,77 @@ class HomeDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_details)
 
+        //val id2=intent.getIntExtra("id2",1)
+        //val id1=intent.getIntExtra("id1",2)
+        //val intent2 = intent
+        //val info = intent2.getStringExtra("info")
 
-        like_checkbox.setOnCheckedChangeListener { checkBox, isChecked ->
 
-            if (isChecked) {
+        bilimdetailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel::class.java]
+        bilimdetailsViewModel.getDetailRoom(args.uID)
+        observeDetailBiliRoom()
 
-                Toast.makeText(applicationContext, "ischecked", Toast.LENGTH_SHORT).show()
+        filozofetailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
+        filozofetailsViewModel.getDetailRoom2(args.uID)
+        observeDetailFiloRoom()
 
-            } else {
+        liderdailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
+        liderdailsViewModel.getDetailRoom3(args.uID)
+        observeDetailLiederRoom()
 
-                Toast.makeText(applicationContext, "not checked", Toast.LENGTH_SHORT).show()
-            }
-        }
+
+
+
+
+
         img_back_home.setOnClickListener {
             onBackPressed()
         }
 
-        image_details.setImageResource(args.user.image)
-
-        details_text_baslik.text=args.user.name
-        details_text_detay.text=args.user.history
-        details_text_age.text=args.user.age
-
-
-
-
-
-
-
-
-
     }
+
+    private fun observeDetailBiliRoom() {
+
+        bilimdetailsViewModel.details.observe(this, Observer { detay ->
+
+            detay?.let {
+
+                details_text_baslik.text = detay.name
+                details_text_age.text = detay.date
+                details_text_detay.text = detay.details
+                Glide.with(this).load(detay.image).into(image_details)
+
+            }
+        })
+    }
+
+    private fun observeDetailFiloRoom() {
+
+        filozofetailsViewModel.details2.observe(this, Observer { detay2 ->
+
+            detay2?.let {
+
+                details_text_baslik.text = detay2.name
+                details_text_age.text = detay2.date
+                details_text_detay.text = detay2.details
+                Glide.with(this).load(detay2.image).into(image_details)
+            }
+        })
+    }
+
+    private fun observeDetailLiederRoom() {
+
+        liderdailsViewModel.details3.observe(this, Observer { detay3 ->
+
+            detay3?.let {
+
+                details_text_baslik.text = detay3.name
+                details_text_age.text = detay3.date
+                details_text_detay.text = detay3.details
+                Glide.with(this).load(detay3.image).into(image_details)
+            }
+        })
+    }
+
+
 }

@@ -19,7 +19,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
 
-        val userDao = UserDatabase.getDatabase(application).userDao()
+        val userDao = UserDatabase.invoke(application).userDao()
         repository = UserRepository(userDao)
         readAllData = userDao.readAllData()
     }

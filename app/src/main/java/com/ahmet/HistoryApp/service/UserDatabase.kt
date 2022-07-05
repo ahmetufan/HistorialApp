@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ahmet.HistoryApp.model.User
+import com.ahmet.HistoryApp.model.*
 
 
-@Database(entities = [User::class], version = 2)
+@Database(entities = [User::class,Bili::class,Lieder::class,Filo::class,Savvas::class,One::class], version = 7)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
@@ -16,18 +16,18 @@ abstract class UserDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: UserDatabase? = null
 
-        fun getDatabase(context: Context): UserDatabase {
-            var tempInstance = INSTANCE
-            if (tempInstance != null) {
-                return tempInstance
-            }
-            synchronized(this) {
-                val instance =
-                    Room.databaseBuilder(context, UserDatabase::class.java, "user_database")
-                        .fallbackToDestructiveMigration().build()
-                tempInstance = instance
-                return instance
+
+        private val lock = Any()
+
+        operator fun invoke(context: Context) = INSTANCE ?: synchronized(lock) {
+
+            INSTANCE ?: makeDatabase(context).also {
+                INSTANCE = it
             }
         }
+
+        private fun makeDatabase(context: Context) = Room.databaseBuilder(
+            context.applicationContext, UserDatabase::class.java, "user_database"
+        ).fallbackToDestructiveMigration().build()
     }
 }

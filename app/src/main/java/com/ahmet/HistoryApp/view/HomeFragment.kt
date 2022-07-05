@@ -54,7 +54,7 @@ class HomeFragment : Fragment(), Listener {
 
         recycler_bilim.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapterbilim = Home_Adaptor(arrayListOf())
+        adapterbilim = Home_Adaptor(arrayListOf(), arrayListOf())
         recycler_bilim.adapter = adapterbilim
 
         observeLiveData()
