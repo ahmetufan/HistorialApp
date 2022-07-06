@@ -13,9 +13,9 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_home_details.*
 
 class HomeDetailsActivity : AppCompatActivity() {
-    private lateinit var bilimdetailsViewModel: HomeDetailsViewModel
-    private lateinit var filozofetailsViewModel: HomeDetailsViewModel2
-    private lateinit var liderdailsViewModel: HomeDetailsViewModel3
+    private lateinit var billiardsViewModel: HomeDetailsViewModel
+    private lateinit var flooziesViewModel: HomeDetailsViewModel2
+    private lateinit var literalsViewModel: HomeDetailsViewModel3
 
     private val args by navArgs<HomeDetailsActivityArgs>()
 
@@ -24,27 +24,22 @@ class HomeDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_details)
 
-        //val id2=intent.getIntExtra("id2",1)
-        //val id1=intent.getIntExtra("id1",2)
-        //val intent2 = intent
-        //val info = intent2.getStringExtra("info")
 
-
-        bilimdetailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel::class.java]
-        bilimdetailsViewModel.getDetailRoom(args.uID)
+        billiardsViewModel = ViewModelProvider(this)[HomeDetailsViewModel::class.java]
+        billiardsViewModel.getDetailRoom(args.uID)
         observeDetailBiliRoom()
 
-        filozofetailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
-        filozofetailsViewModel.getDetailRoom2(args.uID)
-        observeDetailFiloRoom()
 
-        liderdailsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
-        liderdailsViewModel.getDetailRoom3(args.uID)
-        observeDetailLiederRoom()
+
+        flooziesViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
+        flooziesViewModel.getDetailRoom2(args.uID)
+       // observeDetailFiloRoom()
 
 
 
-
+        literalsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
+        literalsViewModel.getDetailRoom3(args.uID)
+        //observeDetailLiederRoom()
 
 
         img_back_home.setOnClickListener {
@@ -55,7 +50,7 @@ class HomeDetailsActivity : AppCompatActivity() {
 
     private fun observeDetailBiliRoom() {
 
-        bilimdetailsViewModel.details.observe(this, Observer { detay ->
+        billiardsViewModel.details.observe(this, Observer { detay ->
 
             detay?.let {
 
@@ -70,7 +65,7 @@ class HomeDetailsActivity : AppCompatActivity() {
 
     private fun observeDetailFiloRoom() {
 
-        filozofetailsViewModel.details2.observe(this, Observer { detay2 ->
+        flooziesViewModel.details2.observe(this, Observer { detay2 ->
 
             detay2?.let {
 
@@ -84,7 +79,7 @@ class HomeDetailsActivity : AppCompatActivity() {
 
     private fun observeDetailLiederRoom() {
 
-        liderdailsViewModel.details3.observe(this, Observer { detay3 ->
+        literalsViewModel.details3.observe(this, Observer { detay3 ->
 
             detay3?.let {
 

@@ -21,16 +21,16 @@ class HomeFragment : Fragment(), Listener {
 
 
     private lateinit var viewModel: HomeViewModel
-    private lateinit var adapterbilim: Home_Adaptor
+    private lateinit var adapterbilim: Adaptor1
 
-    private lateinit var filozofViewModel: FilozofViewModel
-    private lateinit var adapterfilozof: Adaptor_Filozof
+    private lateinit var filoViewModel: FilozofViewModel
+    private lateinit var adapterfilozof: Adaptor2
 
-    private lateinit var liderViewModel: LiderViewModel
-    private lateinit var adapterLider: Adaptor_Lider
+    private lateinit var liederViewModel: LiderViewModel
+    private lateinit var adapterLieder: Adaptor3
 
-    private lateinit var onemliViewModel:OnemliViewModel
-    private lateinit var adapterOnemli:Adaptor_Onemli
+    private lateinit var oneViewModel:OnemliViewModel
+    private lateinit var adapterOne:Adaptor4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,88 +48,86 @@ class HomeFragment : Fragment(), Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         viewModel.refreshData()
 
         recycler_bilim.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapterbilim = Home_Adaptor(arrayListOf(), arrayListOf())
+        adapterbilim = Adaptor1(arrayListOf())
         recycler_bilim.adapter = adapterbilim
-
         observeLiveData()
 
-        filozofViewModel = ViewModelProvider(this).get(FilozofViewModel::class.java)
 
-        filozofViewModel.refreshData()
+        filoViewModel = ViewModelProvider(this)[FilozofViewModel::class.java]
+        filoViewModel.refreshData()
 
         recycler_lider.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapterfilozof = Adaptor_Filozof(arrayListOf())
+        adapterfilozof = Adaptor2(arrayListOf())
         recycler_lider.adapter = adapterfilozof
+        observeFiloData()
 
-        observeFilozofData()
 
-        liderViewModel = ViewModelProvider(this).get(LiderViewModel::class.java)
 
-        liderViewModel.refreshData()
+        liederViewModel = ViewModelProvider(this)[LiderViewModel::class.java]
+        liederViewModel.refreshData()
+
 
         recycler_filozof.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        adapterLider = Adaptor_Lider(arrayListOf())
-        recycler_filozof.adapter = adapterLider
+        adapterLieder = Adaptor3(arrayListOf())
+        recycler_filozof.adapter = adapterLieder
+        observeLiederData()
 
-        observeLiderData()
 
-        onemliViewModel=ViewModelProvider(this).get(OnemliViewModel::class.java)
 
-        onemliViewModel.refreshData()
+        oneViewModel= ViewModelProvider(this)[OnemliViewModel::class.java]
+        oneViewModel.refreshData()
 
         recycler_aktivist.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        adapterOnemli= Adaptor_Onemli(arrayListOf())
-        recycler_aktivist.adapter=adapterOnemli
-
-        observeOnemliData()
+        adapterOne= Adaptor4(arrayListOf())
+        recycler_aktivist.adapter=adapterOne
+        observeOnealData()
 
 
     }
 
-    fun observeLiveData() {
+    private fun observeLiveData() {
 
-        viewModel.bilim.observe(viewLifecycleOwner, Observer { bilim ->
+        viewModel.bilim.observe(viewLifecycleOwner, Observer { bulimia ->
 
-            bilim?.let {
-                adapterbilim.updateBilim(bilim)
+            bulimia?.let {
+                adapterbilim.updateBilim(bulimia)
             }
         })
     }
 
-    fun observeFilozofData() {
+    private fun observeFiloData() {
 
-        filozofViewModel.filozof.observe(viewLifecycleOwner, Observer { filozof ->
+        filoViewModel.filozof.observe(viewLifecycleOwner, Observer { filo ->
 
-            filozof?.let {
-                adapterfilozof.updateFilozof(filozof)
+            filo?.let {
+                adapterfilozof.updateFilozof(filo)
             }
         })
     }
 
-    fun observeLiderData() {
+    private fun observeLiederData() {
 
-        liderViewModel.lider.observe(viewLifecycleOwner, Observer { lider ->
+        liederViewModel.lider.observe(viewLifecycleOwner, Observer { lieder ->
 
-            lider?.let {
-                adapterLider.updateLider(lider)
+            lieder?.let {
+                adapterLieder.updateLider(lieder)
             }
         })
     }
 
-    fun observeOnemliData() {
+    private fun observeOnealData() {
 
-        onemliViewModel.onemli.observe(viewLifecycleOwner, Observer { onemli ->
+        oneViewModel.onemli.observe(viewLifecycleOwner, Observer { one ->
 
-            onemli?.let {
-                adapterOnemli.updateOnemli(onemli)
+            one?.let {
+                adapterOne.updateOnemli(one)
             }
         })
     }
