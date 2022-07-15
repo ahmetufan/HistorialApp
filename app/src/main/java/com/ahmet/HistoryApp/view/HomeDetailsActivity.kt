@@ -2,6 +2,7 @@ package com.ahmet.HistoryApp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.navArgs
@@ -25,21 +26,24 @@ class HomeDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_details)
 
 
-        billiardsViewModel = ViewModelProvider(this)[HomeDetailsViewModel::class.java]
-        billiardsViewModel.getDetailRoom(args.uID)
-        observeDetailBiliRoom()
 
-
-
-        flooziesViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
-        flooziesViewModel.getDetailRoom2(args.uID)
-       // observeDetailFiloRoom()
-
-
-
-        literalsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
-        literalsViewModel.getDetailRoom3(args.uID)
-        //observeDetailLiederRoom()
+        when (args.type) {
+            Type.Bilim.ordinal -> {
+                billiardsViewModel = ViewModelProvider(this)[HomeDetailsViewModel::class.java]
+                billiardsViewModel.getDetailRoom(args.uID)
+                observeDetailBiliRoom()
+            }
+            Type.Filo.ordinal -> {
+                flooziesViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
+                flooziesViewModel.getDetailRoom2(args.uID)
+                observeDetailFiloRoom()
+            }
+            Type.Lieder.ordinal -> {
+                literalsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
+                literalsViewModel.getDetailRoom3(args.uID)
+                observeDetailLiederRoom()
+            }
+        }
 
 
         img_back_home.setOnClickListener {

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ahmet.HistoryApp.R
 import com.ahmet.HistoryApp.ap.view.HomeFragmentDirections
 import com.ahmet.HistoryApp.model.Filo
+import com.ahmet.HistoryApp.view.Type
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.filozof_row.view.*
 
@@ -36,7 +37,7 @@ class Adaptor2(private val list1: ArrayList<Filo>): RecyclerView.Adapter<Adaptor
             holder.itemView.context.startActivity(intent)
                                                                    */
 
-            val action=HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id4)
+            val action=HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id4, Type.Filo.ordinal)
             Navigation.findNavController(it).navigate(action)
         }
 

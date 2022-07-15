@@ -46,8 +46,8 @@ class UpdateActivity : AppCompatActivity() {
                 userViewModel.updateUser(updateUser)
                 Toast.makeText(this@UpdateActivity, "Veri Güncellendi", Toast.LENGTH_SHORT).show()
 
-                val intent=Intent(this@UpdateActivity,ProfilFragment::class.java)
-                startActivity(intent)
+                /*val intent=Intent(this@UpdateActivity,ProfilFragment::class.java)
+                startActivity(intent)*/
             }
         }
 

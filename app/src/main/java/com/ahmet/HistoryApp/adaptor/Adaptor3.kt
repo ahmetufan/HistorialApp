@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ahmet.HistoryApp.R
 import com.ahmet.HistoryApp.ap.view.HomeFragmentDirections
 import com.ahmet.HistoryApp.model.Lieder
+import com.ahmet.HistoryApp.view.Type
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.home_bilim_row_dikey.view.*
 
@@ -30,7 +31,7 @@ class Adaptor3(private val list1: ArrayList<Lieder>): RecyclerView.Adapter<Adapt
         Glide.with(holder.itemView.context).load(list1[position].image).into(holder.itemView.imageView3)
 
         holder.itemView.setOnClickListener {
-            val action= HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id5)
+            val action= HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id5, Type.Lieder.ordinal)
             Navigation.findNavController(it).navigate(action)
         }
 

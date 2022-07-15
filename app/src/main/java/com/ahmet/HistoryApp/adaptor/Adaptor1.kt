@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ahmet.HistoryApp.R
 import com.ahmet.HistoryApp.ap.view.HomeFragmentDirections
 import com.ahmet.HistoryApp.model.Bili
+import com.ahmet.HistoryApp.view.Type
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.bilim_row.view.*
 
@@ -35,8 +36,9 @@ class Adaptor1(private val list1: ArrayList<Bili>): RecyclerView.Adapter<Adaptor
             intent.putExtra("info","old")
             holder.itemView.context.startActivity(intent)
                                                                     */
+            //Bilim 0 , Filozof 1
 
-            val action= HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id3)
+            val action= HomeFragmentDirections.actionHomeFragmentToHomeDetailsActivity(list1[position].id3, Type.Bilim.ordinal)
             Navigation.findNavController(it).navigate(action)
 
         }

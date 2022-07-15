@@ -66,6 +66,10 @@
             android:name="uID"
             app:argType="integer"
             android:defaultValue="0" />
+        <argument
+            android:name="type"
+            app:argType="integer"
+            android:defaultValue="0" />
     </activity>
     <activity
         android:id="@+id/warDetailsActivity"

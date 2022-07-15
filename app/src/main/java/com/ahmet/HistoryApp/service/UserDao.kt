@@ -23,7 +23,7 @@ interface UserDao {
     @Query("SELECT * FROM filo")
     suspend fun getAllFilozof(): List<Filo>
 
-    @Query("SELECT * FROM  filo WHERE id= :id")
+    @Query("SELECT * FROM  filo WHERE id4= :id")
     suspend fun getFilozofID(id: Int): Filo
 
     @Insert
@@ -36,7 +36,7 @@ interface UserDao {
     @Query("SELECT * FROM lieder")
     suspend fun getAllLider(): List<Lieder>
 
-    @Query("SELECT * FROM  lieder WHERE id= :id")
+    @Query("SELECT * FROM  lieder WHERE id5= :id")
     suspend fun getLiderID(id: Int): Lieder
 
     @Insert
