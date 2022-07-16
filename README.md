@@ -1,8 +1,9 @@
 # TARİHİ KİŞİLİKLER- HistorialApp
 
-![WhatsApp Image 2022-07-16 at 22  (1)](https://user-images.githubusercontent.com/100429928/179369417-7fce8bdd-fdc4-4a5a-a659-be053a51b64c.jpg)
-![WhatsApp Image 2022-07-16 at 22](https://user-images.githubusercontent.com/100429928/179369418-a10d973a-74f9-4f42-9b35-66e7bb191660.jpg)
-![WhatsApp Image 2022-07-16 at 22  (2)](https://user-images.githubusercontent.com/100429928/179369419-46e1bf2f-1874-440e-aca9-b2eabf8ac101.jpg)
+![WhatsApp Image 2022-07-16 at 22  (2)](https://user-images.githubusercontent.com/100429928/179369868-d81c5310-fa4b-409c-9858-4ce17526a0ac.jpg)
+![WhatsApp Image 2022-07-16 at 22  (1)](https://user-images.githubusercontent.com/100429928/179369869-6c070a85-fe9f-458b-9bbf-0d1b853b0852.jpg)
+![WhatsApp Image 2022-07-16 at 22](https://user-images.githubusercontent.com/100429928/179369871-9343dc4a-a53d-42cc-9afb-7be9db50a651.jpg)
+
 
 # Built With  :hammer_and_wrench:
 
