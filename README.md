@@ -23,3 +23,4 @@
 • [ButtonBar](https://github.com/ismaeldivita/chip-navigation-bar) - An android navigation bar widget
 
 # License  :page_with_curl:<br/>
+HistorialApp is available under the Apache  license. See the [LICENSE](https://github.com/ahmetufan/HistorialApp/blob/master/LICENSE) file for more info.
