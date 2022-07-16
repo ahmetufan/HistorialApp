@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_home_details.*
 class HomeDetailsActivity : AppCompatActivity() {
     private lateinit var billiardsViewModel: HomeDetailsViewModel
     private lateinit var flooziesViewModel: HomeDetailsViewModel2
-    private lateinit var literalsViewModel: HomeDetailsViewModel3
 
     private val args by navArgs<HomeDetailsActivityArgs>()
 
@@ -37,11 +36,6 @@ class HomeDetailsActivity : AppCompatActivity() {
                 flooziesViewModel = ViewModelProvider(this)[HomeDetailsViewModel2::class.java]
                 flooziesViewModel.getDetailRoom2(args.uID)
                 observeDetailFiloRoom()
-            }
-            Type.Lieder.ordinal -> {
-                literalsViewModel = ViewModelProvider(this)[HomeDetailsViewModel3::class.java]
-                literalsViewModel.getDetailRoom3(args.uID)
-                observeDetailLiederRoom()
             }
         }
 
@@ -80,20 +74,5 @@ class HomeDetailsActivity : AppCompatActivity() {
             }
         })
     }
-
-    private fun observeDetailLiederRoom() {
-
-        literalsViewModel.details3.observe(this, Observer { detay3 ->
-
-            detay3?.let {
-
-                details_text_baslik.text = detay3.name
-                details_text_age.text = detay3.date
-                details_text_detay.text = detay3.details
-                Glide.with(this).load(detay3.image).into(image_details)
-            }
-        })
-    }
-
 
 }

@@ -17,7 +17,7 @@
 
 
         <ImageView
-            android:id="@+id/rowLiderImage"
+            android:id="@+id/imageView3"
             android:layout_width="150dp"
             android:layout_height="130dp"
             android:layout_marginStart="7dp"
@@ -28,33 +28,34 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/rowlidername"
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/amaranth"
             android:gravity="center"
+            android:drawableLeft="@drawable/ic_warnamee"
             android:text="Adı Soyadı"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#045287"
-            app:layout_constraintStart_toEndOf="@+id/rowLiderImage"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/rowLiderCountry"
+            android:id="@+id/text22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/amaranth"
+            android:drawableLeft="@drawable/ic_konum"
             android:text="Yaşadığı Ülke"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/rowLiderImage"
-            app:layout_constraintTop_toBottomOf="@+id/rowlidername" />
-
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/text1" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

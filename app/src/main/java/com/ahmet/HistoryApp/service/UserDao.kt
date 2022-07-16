@@ -10,7 +10,7 @@ interface UserDao {
     @Query("SELECT * FROM user2")
     suspend fun getAllBilim(): List<Bili>
 
-    @Query("SELECT * FROM  user2 WHERE id= :id")
+    @Query("SELECT * FROM  user2 WHERE id3= :id")
     suspend fun getBilimID(id: Int): Bili
 
     @Insert
@@ -45,24 +45,11 @@ interface UserDao {
     @Query("DELETE FROM lieder")
     suspend fun deleteLider()
 
-    //Onemli
-    @Query("SELECT * FROM one")
-    suspend fun getAllOnemli(): List<One>
-
-    @Query("SELECT * FROM  one WHERE id= :id")
-    suspend fun getOnemliID(id: Int): One
-
-    @Insert
-    suspend fun insertOnemli(onemli: Array<One>): List<Long>
-
-    @Query("DELETE FROM one")
-    suspend fun deleteOnemli()
-
     //Savas
     @Query("SELECT * FROM savvas")
     suspend fun getAllSavas(): List<Savvas>
 
-    @Query("SELECT * FROM  savvas WHERE id= :id")
+    @Query("SELECT * FROM  savvas WHERE id7= :id")
     suspend fun getSavasID(id:Int) : Savvas
 
     @Insert

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".view.FavoriDetailsActivity">
+    tools:context=".view.LiderDetailsActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -30,7 +30,6 @@
                     android:layout_height="360dp"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/istanbul"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></ImageView>
@@ -45,16 +44,6 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></View>
-
-                <CheckBox
-                    android:id="@+id/favori_like_checkbox_war"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="15dp"
-                    app:useMaterialThemeColors= "false"
-                    android:button="@drawable/favori_btn"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <ImageView
                     android:id="@+id/favori_img_back_war"

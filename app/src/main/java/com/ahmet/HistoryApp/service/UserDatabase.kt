@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.ahmet.HistoryApp.model.*
 
 
-@Database(entities = [User::class,Bili::class,Lieder::class,Filo::class,Savvas::class,One::class], version = 7)
+@Database(entities = [User::class,Bili::class,Lieder::class,Filo::class,Savvas::class], version = 8)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao

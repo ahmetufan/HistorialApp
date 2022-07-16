@@ -15,7 +15,7 @@
         android:theme="@style/Theme.HistoryApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.FavoriDetailsActivity"
+            android:name=".view.LiderDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".view.UpdateActivity"

@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-        android:title="Home"
-        app:cnb_iconColor="@color/home"></item>
+        android:title="Bilim"
+        app:cnb_iconColor="@color/home"/>
 
     <item
         android:id="@+id/warFragment"
         android:icon="@drawable/ic_war"
-        android:title="War"
-        app:cnb_iconColor="#FFB300"></item>
+        android:title="Savaş"
+        app:cnb_iconColor="#FFB300"/>
 
     <item
         android:id="@+id/favoriFragment"
-        android:icon="@drawable/ic_favori"
-        android:title="Favori"
-        app:cnb_iconColor="#FF0000"></item>
+        android:icon="@drawable/liderpng"
+        android:title="Lider"
+        app:cnb_iconColor="#FF0000"/>
     <item
         android:id="@+id/profilFragment"
         android:icon="@drawable/ic_profile"
         android:title="Profil"
-        app:cnb_iconColor="@color/profile"></item>
-
+        app:cnb_iconColor="@color/profile"/>
 </menu>

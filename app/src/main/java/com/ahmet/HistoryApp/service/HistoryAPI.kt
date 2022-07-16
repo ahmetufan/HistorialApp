@@ -21,9 +21,6 @@ interface HistoryAPI {
     @GET("history_lider.php")
     fun getHomeLider():Single<List<Lieder>>
 
-    @GET("history_onemli.php")
-    fun getHomeOnemli():Single<List<One>>
-
     @GET("history_savas.php")
     fun getHomeSavas():Single<List<Savvas>>
 }

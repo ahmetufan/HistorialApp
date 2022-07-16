@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriFragment"
-        android:name="com.ahmet.HistoryApp.view.FavoriFragment"
+        android:name="com.ahmet.HistoryApp.view.LiderFragment"
         android:label="fragment_favori"
         tools:layout="@layout/fragment_favori" >
         <action
@@ -101,11 +101,12 @@
     </activity>
     <activity
         android:id="@+id/favoriDetailsActivity"
-        android:name="com.ahmet.HistoryApp.view.FavoriDetailsActivity"
+        android:name="com.ahmet.HistoryApp.view.LiderDetailsActivity"
         android:label="activity_favori_details"
         tools:layout="@layout/activity_favori_details" >
         <argument
-            android:name="post1"
-            app:argType="com.ahmet.HistoryApp.model.Post" />
+            android:name="post"
+            app:argType="integer"
+            android:defaultValue="0" />
     </activity>
 </navigation>

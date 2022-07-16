@@ -55,16 +55,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textRowBilim" />
 
-        <CheckBox
-            android:id="@+id/favorite_checkbox"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="1dp"
-            android:button="@drawable/favori_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:useMaterialThemeColors="false" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

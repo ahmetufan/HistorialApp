@@ -39,17 +39,7 @@ class LiderAPIService {
         return retrofit.getHomeLider()
     }
 }
-class OnemliAPIService {
-
-    private val URL="http://www.adddisyon.online/"
-
-    private val retrofit=Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava3CallAdapterFactory.create()).build().create(HistoryAPI::class.java)
-
-    fun getAPILider(): Single<List<One>> {
-        return retrofit.getHomeOnemli()
-    }
-}class SavasAPIService {
+class SavasAPIService {
 
     private val URL="http://www.adddisyon.online/"
 
