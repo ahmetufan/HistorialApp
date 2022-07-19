@@ -1,7 +1,9 @@
 package com.ahmet.HistoryApp.viewmodel
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import com.ahmet.HistoryApp.model.Lieder
 import com.ahmet.HistoryApp.preferences.CustomSharedPreferences
 import com.ahmet.HistoryApp.service.LiderAPIService
@@ -37,6 +39,12 @@ class LiderViewModel(application: Application) : BaseViewModel(application) {
         }
 
 
+    }
+    fun searchDatabase(search:String):LiveData<List<Lieder>>{
+
+         val searchDao = UserDatabase(getApplication()).userDao()
+
+        return searchDao.searchDatabase(search).asLiveData()
     }
 
     private fun getDataAPI() {

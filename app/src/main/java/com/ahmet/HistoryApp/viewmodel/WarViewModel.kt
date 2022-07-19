@@ -1,7 +1,10 @@
 package com.ahmet.HistoryApp.viewmodel
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
+import com.ahmet.HistoryApp.model.Lieder
 import com.ahmet.HistoryApp.model.Savvas
 import com.ahmet.HistoryApp.preferences.CustomSharedPreferences
 import com.ahmet.HistoryApp.service.*
@@ -35,6 +38,12 @@ class WarViewModel(application: Application) : BaseViewModel(application) {
             getDataAPI()
         }
 
+    }
+    fun searchDatabase(search:String): LiveData<List<Savvas>> {
+
+        val searchDao = UserDatabase(getApplication()).userDao()
+
+        return searchDao.searchDatabasesavas(search).asLiveData()
     }
 
     private fun getDataAPI() {

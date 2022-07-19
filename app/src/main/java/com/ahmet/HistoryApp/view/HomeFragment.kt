@@ -1,10 +1,13 @@
 package com.ahmet.HistoryApp.ap.view
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +17,7 @@ import com.ahmet.HistoryApp.adaptor.*
 import com.ahmet.HistoryApp.viewmodel.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment() {
 
 
     private lateinit var viewModel: BilimViewModel
@@ -45,9 +48,25 @@ class HomeFragment : Fragment(){
 
         recycler_bilim.layoutManager =
             LinearLayoutManager(context)
-        adapterbilim =AdaptorBilim(arrayListOf())
+        adapterbilim = AdaptorBilim(arrayListOf())
         recycler_bilim.adapter = adapterbilim
         observeLiveData()
+
+        searchBilim.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(deger: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (deger != null) {
+                    searchDatabaseB(deger)
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
 
 
         filoViewModel = ViewModelProvider(this)[FilozofViewModel::class.java]
@@ -59,8 +78,41 @@ class HomeFragment : Fragment(){
         recycler_lider.adapter = adapterfilozof
         observeFiloData()
 
+        searchFilozof.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+            }
 
+            override fun onTextChanged(deger: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                if (deger != null) {
+                    searchDatabaseF(deger)
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
+    }
+
+    private fun searchDatabaseF(query: CharSequence) {
+        val searchQuery = "%$query%"
+        filoViewModel.searchDatabase(searchQuery).observe(this, Observer { listfilo ->
+            listfilo.let {
+                adapterfilozof.updateFilozof(it)
+            }
+        })
+    }
+
+    private fun searchDatabaseB(query: CharSequence) {
+        val searchQuery2 = "%$query%"
+        viewModel.searchDatabase(searchQuery2).observe(this, Observer { listbilim ->
+            listbilim.let {
+                adapterbilim.updateBilim(it)
+            }
+        })
     }
 
     private fun observeLiveData() {

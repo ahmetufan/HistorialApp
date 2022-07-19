@@ -1,6 +1,8 @@
 package com.ahmet.HistoryApp.view
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,9 +48,36 @@ class LiderFragment : Fragment() {
         recycler_liderr.adapter = adapterLieder
         observeLiederData()
 
+        searchLider.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(deger: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                if (deger != null) {
+                    searchDatabase(deger)
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
 
 
     }
+    private fun searchDatabase(query:CharSequence) {
+        val searchQuery="%$query%"
+        liederViewModel.searchDatabase(searchQuery).observe(this, Observer { list ->
+            list.let {
+                adapterLieder.updateLider(it)
+            }
+        })
+    }
+
+
     private fun observeLiederData() {
 
         liederViewModel.lider.observe(viewLifecycleOwner, Observer { lieder ->

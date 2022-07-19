@@ -2,8 +2,11 @@ package com.ahmet.HistoryApp.viewmodel
 
 import android.app.Application
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import com.ahmet.HistoryApp.model.Bili
+import com.ahmet.HistoryApp.model.Lieder
 import com.ahmet.HistoryApp.preferences.CustomSharedPreferences
 import com.ahmet.HistoryApp.service.HistoryAPIService
 import com.ahmet.HistoryApp.service.UserDatabase
@@ -38,6 +41,12 @@ class BilimViewModel(application: Application) : BaseViewModel(application) {
         }
 
 
+    }
+    fun searchDatabase(search:String): LiveData<List<Bili>> {
+
+        val searchDao = UserDatabase(getApplication()).userDao()
+
+        return searchDao.searchDatabaseBilim(search).asLiveData()
     }
 
     private fun getDataAPI() {

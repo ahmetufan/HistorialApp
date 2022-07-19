@@ -1,8 +1,10 @@
 package com.ahmet.HistoryApp.service
 
+import android.icu.text.StringSearch
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.ahmet.HistoryApp.model.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
@@ -19,6 +21,9 @@ interface UserDao {
     @Query("DELETE FROM user2")
     suspend fun deleteBilim()
 
+    @Query("SELECT * FROM user2 WHERE name LIKE :search")
+    fun searchDatabaseBilim(search: String):Flow<List<Bili>>
+
     //Filozof
     @Query("SELECT * FROM filo")
     suspend fun getAllFilozof(): List<Filo>
@@ -31,6 +36,9 @@ interface UserDao {
 
     @Query("DELETE FROM filo")
     suspend fun deleteFilozof()
+
+    @Query("SELECT * FROM filo WHERE name LIKE :search")
+    fun searchDatabaseFilozof(search: String):Flow<List<Filo>>
 
     //Lider
     @Query("SELECT * FROM lieder")
@@ -45,6 +53,9 @@ interface UserDao {
     @Query("DELETE FROM lieder")
     suspend fun deleteLider()
 
+    @Query("SELECT * FROM lieder WHERE name LIKE :search")
+    fun searchDatabase(search: String):Flow<List<Lieder>>
+
     //Savas
     @Query("SELECT * FROM savvas")
     suspend fun getAllSavas(): List<Savvas>
@@ -58,8 +69,11 @@ interface UserDao {
     @Query("DELETE FROM savvas")
     suspend fun deleteSavas()
 
+    @Query("SELECT * FROM savvas WHERE name LIKE :search")
+    fun searchDatabasesavas(search: String):Flow<List<Savvas>>
 
 
+    //Not
     @Query(value = "SELECT * FROM users ORDER BY id ASC")
     fun readAllData(): LiveData<List<User>>
 

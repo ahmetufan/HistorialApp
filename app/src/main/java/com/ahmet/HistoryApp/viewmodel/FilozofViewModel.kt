@@ -1,8 +1,11 @@
 package com.ahmet.HistoryApp.viewmodel
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import com.ahmet.HistoryApp.model.Filo
+import com.ahmet.HistoryApp.model.Lieder
 import com.ahmet.HistoryApp.preferences.CustomSharedPreferences
 import com.ahmet.HistoryApp.service.FilozofAPIService
 import com.ahmet.HistoryApp.service.UserDatabase
@@ -37,6 +40,12 @@ class FilozofViewModel(application: Application) : BaseViewModel(application) {
           }
 
 
+    }
+    fun searchDatabase(search:String): LiveData<List<Filo>> {
+
+        val searchDao = UserDatabase(getApplication()).userDao()
+
+        return searchDao.searchDatabaseFilozof(search).asLiveData()
     }
 
     private fun getDataAPI() {

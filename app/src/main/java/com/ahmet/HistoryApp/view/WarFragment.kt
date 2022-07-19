@@ -1,10 +1,13 @@
 package com.ahmet.HistoryApp.view
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +47,32 @@ class WarFragment : Fragment() {
 
         observeWarData()
 
+        searchWar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(deger: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (deger != null) {
+                    searchDatabase(deger)
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
     }
+    private fun searchDatabase(query:CharSequence) {
+        val searchQuery="%$query%"
+        warViewModel.searchDatabase(searchQuery).observe(this, Observer { list ->
+            list.let {
+                adaptery.updateSavas(it)
+            }
+        })
+    }
+
     fun observeWarData() {
 
         warViewModel.savas.observe(viewLifecycleOwner, Observer { war ->
