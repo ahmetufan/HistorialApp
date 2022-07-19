@@ -4,6 +4,13 @@
 ![WhatsApp Image 2022-07-16 at 22  (1)](https://user-images.githubusercontent.com/100429928/179369869-6c070a85-fe9f-458b-9bbf-0d1b853b0852.jpg)
 ![WhatsApp Image 2022-07-16 at 22](https://user-images.githubusercontent.com/100429928/179369871-9343dc4a-a53d-42cc-9afb-7be9db50a651.jpg)
 
+# Features  :sparkles:
+• Multiple views on the same page<br/>
+• Note taking feature<br/>
+• Everything about Science , History , Philosophy , Leader and wars<br/>
+• Firebase user login
+
+
 
 # Built With  :hammer_and_wrench:
 
